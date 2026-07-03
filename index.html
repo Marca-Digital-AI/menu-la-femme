@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Femme Sabores — Menu Digital</title>
+<meta name="description" content="Menu digital do La Femme Sabores — cozinha angolana contemporânea. Consulte pratos, preços e bebidas.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  // Evita o "flash" do gate para quem já desbloqueou o acesso numa visita anterior.
+  (function () {
+    try {
+      if (localStorage.getItem("lf_unlocked") === "true" || sessionStorage.getItem("lf_skipped_session") === "true") {
+        document.documentElement.classList.add("unlocked");
+      }
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+  <!-- Gate de acesso via número de telefone -->
+  <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="gate-card">
+      <img class="gate-logo" src="assets/img/logo.png" alt="La Femme Sabores">
+      <h1 id="gateTitle">Bem-vindo(a) ao La Femme Sabores</h1>
+      <p class="gate-sub">Indique o seu número de telefone para aceder ao nosso menu digital.</p>
+      <form id="gateForm" class="gate-form" novalidate>
+        <label for="phoneInput">Número de telefone</label>
+        <div class="phone-input-row">
+          <span class="phone-prefix" aria-hidden="true">+244</span>
+          <input type="tel" id="phoneInput" inputmode="numeric" autocomplete="tel-national"
+                 placeholder="923 456 789" maxlength="15" required>
+        </div>
+        <div id="gateError" class="gate-error" aria-live="polite"></div>
+        <button type="submit" class="btn-primary">Ver o Menu</button>
+      </form>
+      <p class="gate-privacy">O seu número é usado apenas para lhe apresentarmos o menu e eventuais novidades do La Femme Sabores.</p>
+      <button id="skipBtn" class="gate-skip" type="button">Continuar sem indicar número</button>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="header-row">
+      <img class="brand-logo" src="assets/img/logo.png" alt="La Femme Sabores">
+      <div class="header-text">
+        <h2>La Femme Sabores</h2>
+        <span>Tradicional comida caseira</span>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true">🔎</span>
+      <input type="search" id="searchInput" placeholder="Procurar prato ou bebida...">
+    </div>
+  </header>
+
+  <!-- Navegação por categorias -->
+  <nav class="cat-nav" id="catNav" aria-label="Categorias do menu"></nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="assets/img/hero.jpg" alt="Sala do La Femme Sabores" loading="eager">
+    <div class="hero-text">
+      <p>&ldquo;Sabor autêntico. Momento inesquecível.&rdquo;</p>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <main id="menuMain"></main>
+  <p id="noResults" class="no-results">Não encontrámos nenhum prato ou bebida com esse termo.</p>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <img class="foot-logo" src="assets/img/logo.png" alt="La Femme Sabores">
+    <h3>La Femme Sabores</h3>
+    <p class="tagline">Sabor autêntico. Momento inesquecível.</p>
+    <p class="foot-line">📍 Rua do BFA, sentido Kifica, terceira travessa rua dos Generais</p>
+    <p class="foot-line">📞 +244 975 627 807 &nbsp;·&nbsp; +244 975 627 713</p>
+    <div class="foot-social">
+      <a href="https://wa.me/244975627807" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/lafemmesabores" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+  <a class="fab-whatsapp" href="https://wa.me/244975627807?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20uma%20mesa%20no%20La%20Femme%20Sabores" target="_blank" rel="noopener">
+    💬 Reservar mesa
+  </a>
+
+  <script src="assets/js/menu-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
