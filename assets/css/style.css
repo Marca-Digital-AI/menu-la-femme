@@ -42,12 +42,14 @@ button { font-family: inherit; }
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: radial-gradient(circle at top, #1c140c 0%, var(--black) 70%);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
   overflow-y: auto;
+  background-image: linear-gradient(180deg, rgba(45,28,17,0.55) 0%, rgba(17,17,17,0.7) 100%), url("../img/gate-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 html.unlocked #gate { display: none; }
@@ -183,13 +185,14 @@ html.unlocked #gate { display: none; }
 
 /* ---------- Header ---------- */
 header.site-header {
-  background: var(--black);
-  color: var(--cream);
+  background: var(--white);
+  color: var(--brown);
   padding: 14px 16px 10px;
   position: sticky;
   top: 0;
   z-index: 50;
   padding-top: calc(14px + env(safe-area-inset-top, 0px));
+  border-bottom: 1px solid var(--beige);
 }
 
 .header-row {
@@ -210,35 +213,38 @@ header.site-header {
   font-size: 1.15rem;
   margin: 0;
   line-height: 1.1;
-  color: var(--white);
+  color: var(--black);
 }
 
 .header-text span {
   font-size: 0.68rem;
-  color: var(--gold);
+  color: var(--brown);
+  opacity: 0.7;
   letter-spacing: 0.03em;
 }
 
 .search-wrap {
   margin-top: 12px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 #searchInput {
   width: 100%;
-  padding: 10px 14px 10px 36px;
+  padding: 10px 14px 10px 38px;
   border-radius: 10px;
-  border: none;
-  background: rgba(255,255,255,0.1);
-  color: var(--cream);
+  border: 1.5px solid var(--beige);
+  background: var(--cream);
+  color: var(--black);
   font-size: 0.92rem;
 }
 
-#searchInput::placeholder { color: rgba(255,248,240,0.5); }
+#searchInput::placeholder { color: var(--brown); opacity: 0.5; }
 
 #searchInput:focus {
-  outline: 2px solid var(--gold);
-  background: rgba(255,255,255,0.16);
+  outline: none;
+  border-color: var(--gold);
 }
 
 .search-icon {
@@ -246,9 +252,13 @@ header.site-header {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.6;
-  font-size: 0.9rem;
+  color: var(--brown);
+  opacity: 0.55;
+  display: flex;
+  pointer-events: none;
 }
+
+.search-icon svg { width: 16px; height: 16px; }
 
 /* ---------- Category nav ---------- */
 nav.cat-nav {
@@ -287,26 +297,34 @@ nav.cat-nav::-webkit-scrollbar { display: none; }
   color: var(--black);
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (slideshow de pratos) ---------- */
 .hero {
   position: relative;
   height: 34vh;
   min-height: 180px;
   max-height: 260px;
   overflow: hidden;
+  background: var(--brown);
 }
 
-.hero img {
+.hero-slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
+
+.hero-slide.active { opacity: 1; }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.75) 100%);
+  z-index: 1;
 }
 
 .hero-text {
@@ -405,11 +423,12 @@ section.category-section { margin-bottom: 30px; scroll-margin-top: var(--section
 
 /* ---------- Footer ---------- */
 footer.site-footer {
-  background: var(--black);
-  color: var(--cream);
+  background: var(--beige);
+  color: var(--brown);
   padding: 28px 18px 24px;
   text-align: center;
   margin-top: 20px;
+  border-top: 1px solid rgba(45,28,17,0.12);
 }
 
 footer.site-footer .foot-logo {
@@ -423,20 +442,31 @@ footer.site-footer h3 {
   font-family: var(--font-title);
   margin: 0 0 4px;
   font-size: 1.1rem;
+  color: var(--black);
 }
 
 footer.site-footer p.tagline {
-  color: var(--gold);
+  color: var(--brown);
+  opacity: 0.75;
   font-size: 0.82rem;
   margin: 0 0 16px;
   font-style: italic;
 }
 
 .foot-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
   font-size: 0.85rem;
-  margin: 4px 0;
-  color: rgba(255,248,240,0.85);
+  margin: 8px 0;
+  color: var(--brown);
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.foot-line svg { width: 15px; height: 15px; margin-top: 2px; flex: 0 0 auto; opacity: 0.75; }
 
 .foot-social {
   margin-top: 14px;
@@ -446,10 +476,11 @@ footer.site-footer p.tagline {
 }
 
 .foot-social a {
-  color: var(--cream);
+  color: var(--brown);
   text-decoration: none;
   font-size: 0.85rem;
-  border: 1px solid rgba(255,248,240,0.3);
+  font-weight: 600;
+  border: 1px solid rgba(45,28,17,0.25);
   padding: 6px 14px;
   border-radius: 999px;
 }
@@ -470,8 +501,14 @@ footer.site-footer p.tagline {
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 }
+
+.fab-whatsapp svg { width: 17px; height: 17px; }
+
+/* ---------- Ícones inline (substituem emoji) ---------- */
+.icon { display: inline-flex; flex: 0 0 auto; }
+.icon svg { width: 100%; height: 100%; }
 
 @media (min-width: 640px) {
   .item-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }

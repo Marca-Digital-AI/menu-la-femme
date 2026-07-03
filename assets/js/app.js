@@ -96,7 +96,7 @@
       pill.className = "cat-pill" + (idx === 0 ? " active" : "");
       pill.type = "button";
       pill.dataset.target = cat.id;
-      pill.innerHTML = '<span aria-hidden="true">' + cat.icon + "</span> " + cat.label;
+      pill.textContent = cat.label;
       pill.addEventListener("click", function () {
         const target = document.getElementById("cat-" + cat.id);
         if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -109,7 +109,7 @@
 
       const title = document.createElement("h2");
       title.className = "category-title";
-      title.innerHTML = '<span aria-hidden="true">' + cat.icon + "</span> " + cat.label;
+      title.textContent = cat.label;
       section.appendChild(title);
 
       const list = document.createElement("div");
@@ -206,6 +206,22 @@
     });
   }
 
+  // ---------- Slideshow de pratos no hero ----------
+  function setupHeroSlideshow() {
+    const slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
+    if (slides.length < 2) return;
+
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+
+    let current = 0;
+    setInterval(function () {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 3500);
+  }
+
   // ---------- Ajuste dinâmico da altura do cabeçalho (nav fixo nunca sobrepõe o header) ----------
   function updateHeaderOffset() {
     const header = document.querySelector("header.site-header");
@@ -226,5 +242,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderMenu();
     updateHeaderOffset();
+    setupHeroSlideshow();
   });
 })();

@@ -5,7 +5,6 @@ const MENU_DATA = [
   {
     id: "sopas",
     label: "Sopas",
-    icon: "🥣",
     items: [
       { name: "Sopa de Legumes", desc: "Legumes em cubos, puré de batata e abóbora", price: "2.500 Kz" },
       { name: "Sopa à Pescadora", desc: "Peixe em cubo, legumes em cubos", price: "2.500 Kz" },
@@ -18,7 +17,6 @@ const MENU_DATA = [
   {
     id: "entradas",
     label: "Entradas & Petiscos",
-    icon: "🍢",
     items: [
       { name: "Canapés La Femme", desc: "Azeitonas, torradas, molho tártaro, frango desfiado e carne moída", price: "3.500 Kz" },
       { name: "Ceviche de Peixe Branco", desc: "Cubos de peixe, sumo de limão, cebola laminada e frutas em cubos", price: "7.500 Kz" },
@@ -43,7 +41,6 @@ const MENU_DATA = [
   {
     id: "fastfood",
     label: "Fast Food",
-    icon: "🍔",
     items: [
       { name: "Hambúrguer La Femme", desc: "Bacon, molho madeira, fiambre, ovo, queijo, salada mista, duas carnes, legumes e batatas fritas", price: "10.000 Kz" },
       { name: "Prego no Pão", desc: "Pão baguete, bife vazia, ovo e batatas fritas", price: "7.000 Kz" },
@@ -53,7 +50,6 @@ const MENU_DATA = [
   {
     id: "carnes",
     label: "Carnes",
-    icon: "🥩",
     items: [
       { name: "Frango Grelhado", desc: "Meio frango, vinagrete, batata frita e picles", price: "9.000 Kz" },
       { name: "Entrecosto Grelhado", desc: "Arroz à grega, batata frita e molho madeira", price: "12.000 Kz" },
@@ -75,7 +71,6 @@ const MENU_DATA = [
   {
     id: "peixes",
     label: "Peixes & Mariscos",
-    icon: "🐟",
     items: [
       { name: "Medalhão de Atum ao Molho de Espinafre", desc: "Batata salteada e esparregado de espinafre", price: "10.000 Kz" },
       { name: "Tranché de Legumes com Arroz de Risotto", desc: "Lombo de corvina, arroz e salada mista", price: "14.000 Kz" },
@@ -92,7 +87,6 @@ const MENU_DATA = [
   {
     id: "nacionais",
     label: "Pratos Nacionais",
-    icon: "🍲",
     items: [
       { name: "Peito Alto", desc: "Carne de vaca, feijão de óleo de palma e funge", price: "13.000 Kz" },
       { name: "Calulu de Carne Seca", desc: "Feijão de óleo de palma, funge e kizaca", price: "14.000 Kz" },
@@ -105,7 +99,6 @@ const MENU_DATA = [
   {
     id: "guarnicoes",
     label: "Guarnições",
-    icon: "🍚",
     items: [
       { name: "Arroz Branco", desc: "", price: "2.700 Kz" },
       { name: "Arroz de Feijão", desc: "", price: "2.700 Kz" },
@@ -123,7 +116,6 @@ const MENU_DATA = [
   {
     id: "sobremesas",
     label: "Sobremesas",
-    icon: "🍰",
     items: [
       { name: "Arroz Doce", desc: "Arroz, leite em pó, canela e raspa de limão", price: "3.000 Kz" },
       { name: "Mousse de Limão", desc: "Natas, leite, limão e segredo da casa", price: "3.000 Kz" },
@@ -140,7 +132,6 @@ const MENU_DATA = [
   {
     id: "infantil",
     label: "Menu Infantil",
-    icon: "🧒",
     items: [
       { name: "Bifinho de Novilho", desc: "Bife de lombo, natas, cogumelos, molho madeira e arroz branco", price: "9.000 Kz" },
       { name: "Estrogonofe de Frango", desc: "Tiras de frango, cogumelos, natas, arroz e cheiro verde", price: "9.000 Kz" },
@@ -154,7 +145,6 @@ const MENU_DATA = [
   {
     id: "bebidas-sem-alcool",
     label: "Águas & Refrigerantes",
-    icon: "🥤",
     items: [
       { name: "Água 0,5 L", desc: "", price: "700 Kz" },
       { name: "Água 1,5 L", desc: "", price: "1.200 Kz" },
@@ -177,7 +167,6 @@ const MENU_DATA = [
   {
     id: "cervejas",
     label: "Cervejas",
-    icon: "🍺",
     items: [
       { name: "Eka / Cuca / Nocal (lata)", desc: "", price: "1.700 Kz" },
       { name: "Booster Cider / Manga / Morango (lata)", desc: "", price: "1.700 Kz" },
@@ -192,7 +181,6 @@ const MENU_DATA = [
   {
     id: "cocktails",
     label: "Cocktails & Sangrias",
-    icon: "🍹",
     items: [
       { name: "Daiquiri", desc: "", price: "5.600 Kz" },
       { name: "Margarita", desc: "", price: "5.000 Kz" },
@@ -210,7 +198,6 @@ const MENU_DATA = [
   {
     id: "destilados",
     label: "Destilados",
-    icon: "🥃",
     items: [
       { name: "Gordon Dry / Gordon Pink", desc: "Gin", price: "7.000 Kz" },
       { name: "Bombay Sapphire", desc: "Gin", price: "9.000 Kz" },
@@ -235,7 +222,6 @@ const MENU_DATA = [
   {
     id: "vinhos",
     label: "Vinhos & Espumantes",
-    icon: "🍷",
     items: [
       { name: "Casal Garcia", desc: "Tinto, branco ou verde", price: "20.000 Kz" },
       { name: "Altano", desc: "Tinto ou branco", price: "20.300 Kz" },
@@ -259,7 +245,7 @@ const RESTAURANT_INFO = {
   tagline: "Sabor autêntico. Momento inesquecível.",
   phone1: "+244 975 627 807",
   phone2: "+244 975 627 713",
-  address: "Rua do BFA, sentido Kifica, terceira travessa rua dos Generais",
+  address: "Benfica, rua do BFA Quinta Travessa, Rua da Pista, junto ao Centro Materno Infantil do Areal",
   social: {
     instagram: "https://instagram.com/lafemmesabores",
     facebook: "https://facebook.com/lafemmesabores"
