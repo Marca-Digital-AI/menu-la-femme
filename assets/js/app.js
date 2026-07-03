@@ -1,8 +1,11 @@
 (function () {
   "use strict";
 
-  // Configuração — para ligar a captura de números a uma folha de cálculo (Google Sheets)
-  // ver README.md secção "Activar a captura de leads". Deixar vazio desactiva o envio,
+  // Configuração — URL do relay de leads (backend/leads-relay.gs, publicado como
+  // Google Apps Script Web App). Ver README.md secção "Activar a captura de leads".
+  // Este relay regista sempre o número numa Google Sheet e reencaminha para o CRM
+  // do Nelson assim que o URL dele for configurado do lado do relay (sem alterar
+  // este ficheiro nem o site publicado). Deixar vazio desactiva apenas o envio,
   // sem afectar o funcionamento do gate.
   const CONFIG = {
     leadsWebhookUrl: ""
