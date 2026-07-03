@@ -2,6 +2,8 @@
 
 Página web leve, mobile-first, com o menu do restaurante **La Femme Sabores**. O acesso ao menu é condicionado à introdução do número de telefone do cliente (com botão discreto para continuar sem o fornecer). Um código QR aponta directamente para esta página.
 
+**Publicado em:** https://marca-digital-ai.github.io/menu-la-femme/
+
 ## Estrutura
 
 ```
