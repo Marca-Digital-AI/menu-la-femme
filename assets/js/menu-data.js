@@ -57,7 +57,7 @@ const MENU_DATA = [
       { name: "Grelhada Mista 2 Pax", desc: "Meio frango, bife vazia, febras, entrecosto, linguiça, chouriço, batatas fritas, feijão preto, ananás, laranja, vinagrete e arroz", price: "30.500 Kz" },
       { name: "Grelhada Mista La Femme", desc: "Picanha, meio frango, bife de vazia, febras, linguiça, chouriço, batatas fritas, feijão preto, ananás, laranja, vinagrete e arroz", price: "50.000 Kz", signature: true },
       { name: "Medalhão de Vazia", desc: "Vazia, arroz à grega, mandioca cremosa e molho de vinho tinto", price: "16.900 Kz" },
-      { name: "Bife à La Femme", desc: "Medalhão de lombo, batatas fritas, molho madeira e tomate confeitado", price: "15.000 Kz" },
+      { name: "Bife à La Femme", desc: "Lombo, batatas fritas, molho madeira e tomate confeitado", price: "15.000 Kz" },
       { name: "Bitoque", desc: "Carne vazia, arroz branco, salada mista, batatas fritas e ovo", price: "13.500 Kz" },
       { name: "Prego no Prato", desc: "Bife, ovo e batatas fritas", price: "12.500 Kz" },
       { name: "Picanha", desc: "Batatas fritas, banana, farofa, ananás, laranja, feijão preto e arroz", price: "17.900 Kz", signature: true },
