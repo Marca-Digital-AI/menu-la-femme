@@ -72,3 +72,5 @@ O ficheiro `assets/img/qr-code.png` aponta para o URL publicado da página. Se o
 ## Actualizar o menu
 
 Editar `assets/js/menu-data.js` — cada categoria tem uma lista de `items` com `name`, `desc` (opcional) e `price`. Marcar `signature: true` para destacar um prato como assinatura da casa.
+
+Para itens com vários tamanhos/preços (ex.: pizzas em Familiar/Média/Individual), substituir `price` por `sizes`: uma lista de `{ label, price }`. Ver categoria `pizzas` para um exemplo completo.

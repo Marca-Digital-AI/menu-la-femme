@@ -8,7 +8,7 @@
   // este ficheiro nem o site publicado). Deixar vazio desactiva apenas o envio,
   // sem afectar o funcionamento do gate.
   const CONFIG = {
-    leadsWebhookUrl: ""
+    leadsWebhookUrl: "https://script.google.com/macros/s/AKfycbyUzx_a2OSjDBhmeVZxjyL9MtpP9cTbWX7nwGB2cmEw_8sdQ_9LonrZnguIcvZ9STkr/exec"
   };
 
   const STORAGE_KEY_UNLOCKED = "lf_unlocked";
@@ -125,11 +125,13 @@
         const name = document.createElement("span");
         name.className = "item-name";
         name.textContent = item.name;
-        const price = document.createElement("span");
-        price.className = "item-price";
-        price.textContent = item.price;
         top.appendChild(name);
-        top.appendChild(price);
+        if (!item.sizes) {
+          const price = document.createElement("span");
+          price.className = "item-price";
+          price.textContent = item.price;
+          top.appendChild(price);
+        }
         card.appendChild(top);
 
         if (item.desc) {
@@ -137,6 +139,21 @@
           desc.className = "item-desc";
           desc.textContent = item.desc;
           card.appendChild(desc);
+        }
+
+        if (item.sizes) {
+          const sizes = document.createElement("div");
+          sizes.className = "item-sizes";
+          item.sizes.forEach(function (s) {
+            const row = document.createElement("span");
+            row.className = "item-size";
+            const label = document.createElement("b");
+            label.textContent = s.label;
+            row.appendChild(label);
+            row.appendChild(document.createTextNode(" " + s.price));
+            sizes.appendChild(row);
+          });
+          card.appendChild(sizes);
         }
 
         if (item.signature) {

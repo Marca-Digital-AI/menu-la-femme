@@ -401,6 +401,28 @@ section.category-section { margin-bottom: 30px; scroll-margin-top: var(--section
   line-height: 1.35;
 }
 
+.item-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.item-size {
+  font-size: 0.78rem;
+  color: var(--brown);
+  background: var(--cream);
+  border: 1px solid var(--beige);
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.item-size b {
+  color: var(--black);
+  font-weight: 700;
+}
+
 .badge-signature {
   display: inline-block;
   margin-top: 6px;

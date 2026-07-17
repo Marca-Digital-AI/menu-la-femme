@@ -12,11 +12,19 @@
  *      acesso "Qualquer pessoa").
  *   4. Copiar o URL gerado para CONFIG.leadsWebhookUrl em assets/js/app.js.
  *
- * Para ligar ao CRM do Nelson mais tarde (sem tocar no site):
+ * Para ligar ao CRM/SIC do Nelson mais tarde (sem tocar no site):
  *   Ficheiro → Propriedades do projecto → Propriedades do script →
- *   adicionar CRM_WEBHOOK_URL = <url do endpoint do CRM>.
+ *   adicionar CRM_WEBHOOK_URL = <url do endpoint do SIC>.
  *   A partir daí, cada lead passa a ser reencaminhado automaticamente,
  *   além de continuar registado nesta sheet como cópia de segurança.
+ *
+ *   Se o endpoint do SIC exigir autenticação (API key, Bearer token, etc.),
+ *   adicionar também duas propriedades do script:
+ *     CRM_WEBHOOK_AUTH_HEADER = <nome do cabeçalho, ex.: "Authorization" ou "X-API-Key">
+ *     CRM_WEBHOOK_AUTH_VALUE  = <valor do cabeçalho, ex.: "Bearer xxxxxxxx">
+ *   Isto é seguro porque estas propriedades só existem do lado do relay
+ *   (Apps Script), nunca no site público — o browser do cliente nunca vê
+ *   nem a URL nem a chave do SIC.
  */
 
 function doPost(e) {
@@ -64,10 +72,20 @@ function forwardToCrm(crmUrl, data, phone) {
     source: data.source || "menu-digital",
     timestamp: data.timestamp || new Date().toISOString()
   };
+
+  var props = PropertiesService.getScriptProperties();
+  var authHeader = props.getProperty("CRM_WEBHOOK_AUTH_HEADER");
+  var authValue = props.getProperty("CRM_WEBHOOK_AUTH_VALUE");
+  var headers = {};
+  if (authHeader && authValue) {
+    headers[authHeader] = authValue;
+  }
+
   try {
     UrlFetchApp.fetch(crmUrl, {
       method: "post",
       contentType: "application/json",
+      headers: headers,
       payload: JSON.stringify(payload),
       muteHttpExceptions: true
     });
