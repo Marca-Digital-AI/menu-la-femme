@@ -3,6 +3,7 @@
 // Fonte pizzas/massas: Menu la femme atualizado PIZZA.pdf (2026-07-15)
 // Fonte pequeno-almoço: Menu Pequeno Almoço.pdf (2026-07-15)
 // Fonte bebidas: NOVO MENU DE BEBIDAS.pdf (2026-07-15)
+// ATUALIZAÇÕES: Menu la femme atualizado (Preços e Pratos actualizados).pdf (2026-09-25)
 const MENU_DATA = [
   {
     id: "sopas",
@@ -10,10 +11,10 @@ const MENU_DATA = [
     items: [
       { name: "Sopa de Legumes", desc: "Legumes em cubos, puré de batata e abóbora", price: "2.500 Kz" },
       { name: "Sopa à Pescadora", desc: "Peixe em cubo, legumes em cubos", price: "2.500 Kz" },
-      { name: "Caldo Verde", desc: "Puré de batata, couve juliana e tiras de chouriço", price: "2.500 Kz" },
+      { name: "Caldo Verde", desc: "Puré de batata, couve juliana e tiras de chouriço", price: "10.000,00kz" },
       { name: "Creme de Abóbora", desc: "Puré de abóbora e cenoura", price: "2.500 Kz" },
-      { name: "Sopa da Pedra", desc: "Puré de feijão, legumes em cubos, sispes e tiras de chouriço", price: "3.000 Kz" },
-      { name: "Caldo de Peixe", desc: "Peixe fresco, peixe seco, batata doce, mandioca e farinha", price: "8.500 Kz" }
+      { name: "Sopa de Feijão", desc: "Puré de feijão, legumes em cubos, sispes e tiras de chouriço", price: "3.000 Kz" },
+      { name: "Caldo de Peixe", desc: "Peixe fresco, peixe seco, batata doce, mandioca e farinha", price: "10.000,00kz" }
     ]
   },
   {
@@ -28,7 +29,7 @@ const MENU_DATA = [
       { name: "Camarão Frito", desc: "", price: "10.250 Kz" },
       { name: "Pica-Pau de Novilho", desc: "Carne em cubos, picles, azeitonas e molho madeira", price: "8.900 Kz" },
       { name: "Pica-Pau do Mar", desc: "Frutos do mar em cubos, picles e cheiro verde", price: "9.900 Kz" },
-      { name: "Couvert de Quitutes da Terra", desc: "Bombó frito ou assado, gimguba torrada, banana pão ou batata", price: "3.000 Kz" },
+      { name: "Couvert de Quitutes da Terra", desc: "Bombó frito ou assado, gimguba torrada, banana pão ou batata", price: "3.500,00kz" },
       { name: "Salada de Polvo", desc: "", price: "7.690 Kz" },
       { name: "Nogueth ao Molho Tártaro", desc: "Peito de frango em cubos e cheiro verde", price: "7.000 Kz" },
       { name: "Joaquinzinho", desc: "Carapinha, molho escabeche, picante e cheiro verde", price: "4.000 Kz" },
@@ -37,7 +38,10 @@ const MENU_DATA = [
       { name: "Asinhas Panadas ao Molho Coquetel", desc: "Farinha panko e asinhas crocantes", price: "7.000 Kz" },
       { name: "Chouriço Caseiro", desc: "Torradas e molho do chefe", price: "7.500 Kz" },
       { name: "Moelas La Femme", desc: "Legumes em cubos, torradas e azeitonas", price: "5.000 Kz" },
-      { name: "Tiras de Porco", desc: "Picles, lombos de porco, azeitonas, molho coquetel e torradas", price: "7.800 Kz" }
+      { name: "Tiras de Carne de Vitelino", desc: "Picles, lombos de porco, azeitonas, molho coquetel e torradas", price: "7.800 Kz" },
+      { name: "Mexilhão a Bulhão Pato", desc: "Mexilhões preparados ao molho bulhão pato", price: "6.000,00kz" },
+      { name: "Amenjoas La Femme", desc: "Amêijoas na sua própria casca com molho especial", price: "10.000,00kz" },
+      { name: "Gambas ao Alho", desc: "Gambas salteadas com alho e azeite", price: "19.500,00kz" }
     ]
   },
   {
@@ -91,19 +95,22 @@ const MENU_DATA = [
     label: "Carnes",
     items: [
       { name: "Frango Grelhado", desc: "Meio frango, vinagrete, batata frita e picles", price: "9.000 Kz" },
+      { name: "Frango Inteiro c/Arroz", desc: "Frango inteiro grelhado com arroz", price: "18.000,00kz" },
       { name: "Entrecosto Grelhado", desc: "Arroz à grega, batata frita e molho madeira", price: "12.000 Kz" },
       { name: "Grelhada Mista 1 Pax", desc: "Coxa de frango, entrecosto, linguiça, batatas fritas, feijão preto, ananás, laranja e vinagrete", price: "15.500 Kz" },
       { name: "Grelhada Mista 2 Pax", desc: "Meio frango, bife vazia, febras, entrecosto, linguiça, chouriço, batatas fritas, feijão preto, ananás, laranja, vinagrete e arroz", price: "30.500 Kz" },
       { name: "Grelhada Mista La Femme", desc: "Picanha, meio frango, bife de vazia, febras, linguiça, chouriço, batatas fritas, feijão preto, ananás, laranja, vinagrete e arroz", price: "50.000 Kz", signature: true },
       { name: "Medalhão de Vazia", desc: "Vazia, arroz à grega, mandioca cremosa e molho de vinho tinto", price: "16.900 Kz" },
-      { name: "Bife à La Femme", desc: "Lombo, batatas fritas, molho madeira e tomate confeitado", price: "15.000 Kz" },
+      { name: "Bife à La Femme", desc: "Lombo, batatas fritas, molho madeira e tomate confeitado", price: "15.500,00kz" },
+      { name: "Bife a Permiguiana c/Esparguete Salteados", desc: "Bife com molho permigiana servido com esparguete salteado", price: "14.500,00kz" },
+      { name: "Bife de Lombo Grelhado", desc: "Bife de lombo grelhado com acompanhamentos", price: "18.000,00kz" },
       { name: "Bitoque", desc: "Carne vazia, arroz branco, salada mista, batatas fritas e ovo", price: "13.500 Kz" },
       { name: "Prego no Prato", desc: "Bife, ovo e batatas fritas", price: "12.500 Kz" },
       { name: "Picanha", desc: "Batatas fritas, banana, farofa, ananás, laranja, feijão preto e arroz", price: "17.900 Kz", signature: true },
       { name: "Estrogonoff de Carne", desc: "Tiras de carne, cogumelos, natas, arroz e cheiro verde", price: "14.700 Kz" },
       { name: "Estrogonoff de Frango", desc: "Tiras de frango, cogumelos, natas, arroz e cheiro verde", price: "13.000 Kz" },
       { name: "Entrecosto Selado ao Molho de Leite de Coco", desc: "Arroz pupilo, molho de alho e batata à padeiro", price: "12.800 Kz" },
-      { name: "Tiras de Carne", desc: "Maminha, funge, molho de tomate e quizaca", price: "12.500 Kz" },
+      { name: "Tiras de Carne de Vitelino", desc: "Maminha, funge, molho de tomate e quizaca", price: "12.500 Kz" },
       { name: "Tiras de Porco Nacional", desc: "Carne de porco nacional, funge, molho de tomate e couve refogada", price: "12.500 Kz" }
     ]
   },
@@ -113,13 +120,19 @@ const MENU_DATA = [
     items: [
       { name: "Medalhão de Atum ao Molho de Espinafre", desc: "Batata salteada e esparregado de espinafre", price: "10.000 Kz" },
       { name: "Tranché de Legumes com Arroz de Risotto", desc: "Lombo de corvina, arroz e salada mista", price: "14.000 Kz" },
-      { name: "Cozido de Garoupa", desc: "Batata nacional, legumes em cubos e ovos", price: "17.000 Kz" },
+      { name: "Muqueca de Peixe c/Arroz", desc: "Peixe cozinhado à moda da muqueca com arroz", price: "18.000,00kz" },
+      { name: "Filete de Atum c/Arroz Malandrinho", desc: "Filete de atum grelhado com arroz malandrinho", price: "18.000,00kz" },
+      { name: "Cozido de Peixe", desc: "Batata nacional, legumes em cubos e ovos", price: "17.000 Kz" },
       { name: "Corvina", desc: "Posta de corvina, legumes em cubos, leite de coco e cheiro verde", price: "13.500 Kz" },
       { name: "Peixe Grelhado com Legumes Salteados", desc: "Peixe linguado, batata doce e cheiro verde", price: "13.500 Kz" },
+      { name: "Linguado", desc: "Peixe linguado grelhado com acompanhamentos", price: "13.500,00kz" },
       { name: "Choco Grelhado", desc: "Batata ao murro, legumes em cubos e molho de alho", price: "15.500 Kz" },
       { name: "Garoupa Grelhada", desc: "Posta, ou consultar a cozinha — batata doce cozida, legumes salteados e molho de alho", price: "17.000 Kz" },
       { name: "Arroz de Mariscos", desc: "Caranguejo, camarão, peixe corvina, lagosta, mexilhões, arroz, legumes em rodelas e cheiro verde", price: "50.000 Kz", signature: true },
-      { name: "Lagosta Grelhada", desc: "Molho de alho, batata doce à lapiseira e legumes em cubos", price: "18.000 Kz" },
+      { name: "Lagosta Grelhada", desc: "Molho de alho, batata doce à lapiseira e legumes em cubos", price: "20.000,00kz" },
+      { name: "Risoto c/Gambas", desc: "Risoto cremoso com gambas", price: "20.000,00kz" },
+      { name: "Bacalhau c/Natas", desc: "Bacalhau preparado com natas e acompanhamentos", price: "18.500,00kz" },
+      { name: "Esparguete c/Gambas", desc: "Esparguete salteado com gambas", price: "20.000,00kz" },
       { name: "Bacalhau à Lagareiro", desc: "Batatas em cubos, cebolada, molho de alho e cheiro verde", price: "35.000 Kz", signature: true }
     ]
   },
@@ -130,8 +143,9 @@ const MENU_DATA = [
       { name: "Peito Alto", desc: "Carne de vaca, feijão de óleo de palma e funge", price: "13.000 Kz" },
       { name: "Calulu de Carne Seca", desc: "Feijão de óleo de palma, funge e kizaca", price: "14.000 Kz" },
       { name: "Muamba de Galinha Nacional", desc: "Galinha, funge e couve refogada", price: "12.000 Kz" },
-      { name: "Macayabo", desc: "Fumbua, catato, molho de beringela e chicuanga", price: "10.000 Kz" },
+      { name: "Macayabo", desc: "Fumbua, catato, molho de beringela e chicuanga", price: "12.000,00kz" },
       { name: "Calulu de Peixe Fresco e Seco", desc: "Peixe corvina fresco e seco, funge e feijão de óleo de palma", price: "12.000 Kz" },
+      { name: "Cabidela", desc: "Prato tradicional com sangue de galinha, arroz e acompanhamentos", price: "12.000,00kz" },
       { name: "Mufete La Femme", desc: "Peixe chopa ou carapau, batata doce, mandioca, banana pão, vinagrete, farinha musseque e feijão de óleo de palma", price: "10.000 Kz", signature: true }
     ]
   },
@@ -158,14 +172,12 @@ const MENU_DATA = [
     items: [
       { name: "Arroz Doce", desc: "Arroz, leite em pó, canela e raspa de limão", price: "3.000 Kz" },
       { name: "Mousse de Limão", desc: "Natas, leite, limão e segredo da casa", price: "3.000 Kz" },
-      { name: "Mousse La Femme", desc: "Múcua, natas e segredo da casa", price: "3.000 Kz", signature: true },
+      { name: "Mousse de Mucua", desc: "Múcua, natas e segredo da casa", price: "3.000 Kz", signature: true },
       { name: "Mousse de Chocolate", desc: "Natas, leite, chocolate e segredo da casa", price: "3.000 Kz" },
-      { name: "Bolo", desc: "", price: "5.000 Kz" },
+      { name: "Bolo La Femme (Mine)", desc: "Bolo caseiro especial da casa", price: "4.500,00kz" },
       { name: "Petit Gâteau", desc: "", price: "9.000 Kz" },
       { name: "Couvert de Doces de Kitutes", desc: "Pé de moleque, quejada, miconde, paçoca de ginguba e gengibre", price: "5.000 Kz" },
-      { name: "Gelado de Chocolate", desc: "", price: "3.000 Kz" },
-      { name: "Gelado de Baunilha", desc: "", price: "3.000 Kz" },
-      { name: "Gelado de Morango", desc: "", price: "3.000 Kz" }
+      { name: "Gelado", desc: "Chocolate, Baunilha, Morango", price: "3.000,00kz" }
     ]
   },
   {
@@ -175,7 +187,9 @@ const MENU_DATA = [
       { name: "Bifinho de Novilho", desc: "Bife de lombo, natas, cogumelos, molho madeira e arroz branco", price: "9.000 Kz" },
       { name: "Estrogonofe de Frango", desc: "Tiras de frango, cogumelos, natas, arroz e cheiro verde", price: "9.000 Kz" },
       { name: "Bifana com Batata Chips", desc: "Bife de porco, batata doce e arroz agrego", price: "9.000 Kz" },
-      { name: "Bolonhesa La Femme", desc: "Carne moída, queijo mussarela e massa esparguete", price: "9.900 Kz" },
+      { name: "Bolonhesa La Femme", desc: "Carne moída, queijo mussarela e massa esparguete", price: "10.000,00kz" },
+      { name: "Massa Carbonara", desc: "Massa com molho carbonara especial", price: "13.000,00kz" },
+      { name: "Massa Vegetariana", desc: "Massa com legumes frescos", price: "10.000,00kz" },
       { name: "Hambúrguer no Prato", desc: "", price: "8.900 Kz" },
       { name: "Mini Hambúrguer de Novilho", desc: "Uma carne, queijo, molho madeira e batata palha", price: "7.000 Kz" },
       { name: "Mini Hambúrguer de Frango", desc: "Frango, queijo, batata palha e molho branco", price: "7.000 Kz" }
