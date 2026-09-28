@@ -5,7 +5,7 @@ const SIGNATURE_CONFIG = {
     {
       id: "comida",
       label: "Comida",
-      categories: ["sopas", "entradas", "fastfood", "pizzas", "massas", "carnes", "peixes", "nacionais", "guarnicoes", "sobremesas", "infantil"]
+      categories: ["sopas", "entradas", "fastfood", "pizzas", "carnes", "peixes", "nacionais", "guarnicoes", "sobremesas", "infantil"]
     },
     {
       id: "bebidas",
