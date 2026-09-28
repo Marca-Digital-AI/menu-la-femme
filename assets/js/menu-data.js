@@ -26,7 +26,7 @@ const MENU_DATA = [
       { name: "Pica-Pau de Novilho", desc: "Carne em cubos, picles, azeitonas e molho madeira", price: "8.900 Kz" },
       { name: "Pica-Pau Terra e Mar", desc: "Frutos do mar em cubos, picles e cheiro verde", price: "9.900 Kz" },
       { name: "Couvet de Quitutes da Terra", desc: "Bombó frito ou assado, gimguba torrada, banana pão ou batata", price: "3.500 Kz" },
-      { name: "Amenjoas La Femme", desc: "Amêijoas na sua própria casca com molho especial", price: "10.000,00kz" },
+      { name: "Amêijoas La Femme", desc: "Amêijoas na sua própria casca com molho especial", price: "10.000,00kz" },
       { name: "Salada de Polvo", desc: "", price: "7.690 Kz" },
       { name: "Chouriço Caseiro", desc: "Torradas e molho do chefe", price: "7.500 Kz" },
       { name: "Gambas ao Alho", desc: "Gambas salteadas com alho e azeite", price: "19.500,00kz" },
