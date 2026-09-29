@@ -171,7 +171,6 @@ const MENU_DATA = [
       { name: "Cesto de Pães", desc: "Bread Basket", price: "1.500 Kz" },
       { name: "Café", desc: "Coffee", price: "1.500 Kz" },
       { name: "Chá", desc: "Tea", price: "1.500 Kz" },
-      { name: "Galão", desc: "Latte", price: "1.500 Kz" },
       { name: "Leite Quente com Chocolate", desc: "Hot Milk with Chocolate", price: "1.500 Kz" },
       { name: "Fiambre Laminado", desc: "Sliced Ham", price: "1.500 Kz" },
       { name: "Queijo Laminado", desc: "Sliced Cheese", price: "1.500 Kz" },
@@ -217,7 +216,7 @@ const MENU_DATA = [
     id: "cafe-cha",
     label: "Café & Chá",
     items: [
-      { name: "Galão", desc: "", price: "2.000 Kz" },
+      { name: "Galão", desc: "", price: "2.500 Kz" },
       { name: "Café Expresso", desc: "", price: "1.300 Kz" },
       { name: "Chá", desc: "", price: "1.000 Kz" },
       { name: "Capuchino", desc: "", price: "2.500 Kz" },
