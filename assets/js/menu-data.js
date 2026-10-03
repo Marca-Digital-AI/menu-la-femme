@@ -10,7 +10,7 @@ const MENU_DATA = [
     id: "sopas",
     label: "Sopas",
     items: [
-      { name: "Sopa da Pedra", desc: "Puré de feijão, sispe, chouriço, cenoura e couve", price: "3.500,00kz" },
+      { name: "Sopa de Feijão", desc: "Puré de feijão, sispe, chouriço, cenoura e couve", price: "3.500,00kz" },
       { name: "Caldo Verde", desc: "Puré de batata, couve juliana e tiras de chouriço", price: "10.000,00kz" },
       { name: "Caldo de Peixe", desc: "Peixe fresco, peixe seco, batata doce, mandioca e farinha", price: "10.000,00kz" }
     ]
